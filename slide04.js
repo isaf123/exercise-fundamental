@@ -13,12 +13,26 @@
 // 1, 2 3, 4 5 6, 7 8 9 10
 
 /////triangle
+const tri = (tinggi)=>{
+  let prin = "";
+  let count = 1;
+  //loop untuk berpindah baris
+  for (let index = 0; index < tinggi; index++) {
+    //loop untuk membuat kolom--> increement dilakukan dalam kolom
+    for (let j = 0; j <= index; j++) {
+      if(count < 10){
+        prin += "0"
+      }
+      prin += `${count} `;
+      count++;
+    }
+    //Backslash untuk berpindah baris
+    prin+= "\n";
+  }
+  return prin
+}
 
-let numb1 = 1
-let result =''
-
-
-
+console.log(tri(6))
 
 
 /////2. FIZZ BUZZ
@@ -45,7 +59,7 @@ console.log(fizz);
 ////// 3. BODY MASS INDEX
 
 function massIndex(weight,height){
-  let BMI = weight/(height)/height
+  const BMI = weight/(height)/height
   let result =""
   if(BMI <= 18.5){
     result = "less height"
@@ -60,10 +74,9 @@ function massIndex(weight,height){
   }
   
   return result
-
 }
 
-console.log(massIndex(200,1.7))
+console.log(massIndex(60,1.7))
 
 
 //////4. even separator
@@ -76,7 +89,6 @@ function evenOdd(number){
     if((number[index])%2 === 0){
       num.push(number[index])
     }
-    
   }
   console.log(num)
   return num
