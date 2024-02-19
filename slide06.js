@@ -20,16 +20,16 @@ class Student{
 
 student1 =[
   new Student("Ana","ana@mail.com","03-10-2000", 95),
-  new Student("Andi","andi@mail.com","03-11-1999", 100),
-  new Student("Joko","joko@mail.com","05-12-1997", 75),
-  new Student("Bowo","bowo@mail.com","09-10-2002", 55),
+  new Student("Andi","andi@mail.com","03-11-1995", 100),
+  new Student("Joko","joko@mail.com","05-12-1997", 95),
+  new Student("Bowo","bowo@mail.com","09-10-2001", 55),
 ] 
 
 function sortValue(stud){
   let high = stud[0].score;
   let low = stud[0].score;
-  let lowValue = []
-  let highValue =[]
+  let lowValue = stud[0]
+  let highValue =stud[0]
  
 
   let avg = 0;
@@ -50,16 +50,18 @@ function sortValue(stud){
 
   let lowAges = stud[0].getAge()
   let highAges = stud[0].getAge()
-  let highAgeValue = []
-  let lowAgeValue =[]
+  let highAgeValue = stud[0]
+  let lowAgeValue =stud[0]
   
   for (let i= 0; i< stud.length; i++) {
     if(lowAges > stud[i].getAge()){
       lowAges = stud[i].getAge()
       lowAgeValue = stud[i]
+      lowAgeValue.umur = stud[i].getAge()
     } else if (highAges < stud[i].getAge()){
       highAges = stud[i].getAge()
       highAgeValue = stud[i]
+      highAgeValue.umur = stud[i].getAge()
     }
     
   }
@@ -76,7 +78,6 @@ function sortValue(stud){
       lowest : lowAgeValue,
     },
   }
-
   
   return result
 }
@@ -84,6 +85,8 @@ function sortValue(stud){
 console.log(sortValue(student1))
 
 
+
+///exercise 2
 
 
 
