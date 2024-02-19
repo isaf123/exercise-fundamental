@@ -3,7 +3,6 @@
 //menggunakan sorting
 let number = [12, 5, 23, 18, 4, 45, 32]
 
-
 console.log(number.sort())
 
 const sortNumber = (numArray)=>{
@@ -129,8 +128,6 @@ const combineArray = (arr1,arr2)=>{
       newArr.push(plusArr)
       console.log(newArr);
     }
-
-    
   } 
   return newArr
 }
@@ -147,5 +144,7 @@ let newElement = (array,newNumb)=>{
   }
   return array
 }
+
+
 
 console.log(newElement(arr, newNumm))
