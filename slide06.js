@@ -32,7 +32,6 @@ function sortValue(stud){
   let highValue =stud[0]
  
 
-  let avg = 0;
   for(i=0; i < stud.length; i++){
     if(low > stud[i].score){
       low = stud[i].score
@@ -86,7 +85,6 @@ console.log(sortValue(student1))
 
 
 
-///exercise 2
 
 
 

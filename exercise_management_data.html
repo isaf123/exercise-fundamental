@@ -1,0 +1,85 @@
+<script>
+  /// LINKED LIST
+
+//lihat data
+//tmabah data
+/// hapus
+//update
+//exit
+
+
+
+class Data{
+  constructor(_name,_stock,_price){
+    this.name = _name
+    this.stock = _stock
+    this.price = _price
+  }
+}
+
+
+const allData = [
+  new Data("Jaket","15","200000"),
+  new Data("Tas","10","100000"),
+  new Data("Baju","5","150000"),
+]
+
+function simpanData(data){
+    let showList = data.map((value,index) => 
+      result = `${index+1}. Nama : ${value.name}, Stok : ${value.stock}, Harga : ${value.price}`
+    )
+    console.log(showList);
+    return showList.join("\n")
+  }
+
+  do{
+    const pilihMenu = prompt("1.lihat data\n2.tambah data\n3.hapus data\n4.update data\n5.exit data")
+    if(pilihMenu === "1"|| pilihMenu ==="2" || pilihMenu === "3" || pilihMenu ==="4"){
+      if(pilihMenu === "1"){
+        let simpan = simpanData(allData)
+        alert(simpan);
+
+      } else if(pilihMenu === "2"){
+        let simpan1 = simpanData(allData)
+        alert(simpan1)
+
+        const tambahData1 = prompt("masukkan data nama")
+        const tambahData2 = prompt("masukkan data stock")
+        const tambahData3 = prompt("masukkan data harga")
+
+        allData.push(new Data(tambahData1,tambahData2,tambahData3))
+        let simpan2 =  simpanData(allData)
+
+        alert(simpan2)
+        
+      } else if(pilihMenu === "3"){
+        const potong = prompt("pilih nomer object yang ingin dihapus")
+        allData.splice(Number(potong)-1,1)
+        let simpan =  simpanData(allData)
+        alert(simpan)
+
+      } else if(pilihMenu === "4"){
+        let simpan =  simpanData(allData)
+        const update = prompt(`pilih nomer object yang ingin diupdate:\n ${simpan}`)
+        const property = prompt(`pilih data yang akan di ganti\n1.nama\n2.stock\n3.harga`)
+        const ganti = prompt("masukkan pengganti")
+        if(property === "1"){
+          allData[Number(update)-1].name = ganti
+        } else if (property === "2"){
+          allData[Number(update)-1].stock = ganti
+        } else if (property === "3"){
+          allData[Number(update)-1].price = ganti
+        }
+        let simpan2 = simpanData(allData)
+        alert (simpan2)
+      }
+      conti = confirm("lanjut atau tidak ?")
+    }else{conti = confirm("tidak ada menu, lanjut atau tidak ?")}
+    
+
+    
+  }while(
+    conti
+  )
+</script>
+
